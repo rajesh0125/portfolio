@@ -16,6 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
+from django.contrib.staticfiles.storage import staticfiles_storage
+
 
 admin.site.site_header = "Rajesh Admin Portal"
 admin.site.site_title = "Rajesh Admin Portal"
@@ -24,5 +27,6 @@ admin.site.index_title = "Welcome to Rajesh Researcher Portal"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('me.urls')),
+    path('ads.txt', RedirectView.as_view(url=staticfiles_storage.url('ads.txt'))),
 
 ]
