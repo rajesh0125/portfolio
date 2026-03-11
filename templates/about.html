@@ -1,0 +1,451 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Rajesh Gupta - Cybersecurity Professional</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    /* Additional styles for the enhanced about page */
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    
+    .about-content {
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+    
+    .about-intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .about-intro p {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+    
+    .about-content h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #4acfee, #53f8c9, #6070fd, #5bbdff, #4acfee);
+      background-size: 200%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: animate-gradient 2.5s linear infinite;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .about-content p {
+      margin-bottom: 20px;
+      line-height: 1.8;
+      font-size: 17px;
+    }
+    
+    .about-sub {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 30px;
+      margin: 30px 0;
+      border: 1px solid rgba(74, 207, 238, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .about-sub:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(74, 207, 238, 0.2);
+    }
+    
+    .about-sub h3 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #4acfee;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .about-sub h3 i {
+      font-size: 24px;
+    }
+    
+    .about-sub ol, .about-sub ul {
+      padding-left: 20px;
+    }
+    
+    .about-sub li {
+      margin-bottom: 12px;
+      line-height: 1.6;
+      position: relative;
+    }
+    
+    .about-sub li:before {
+      content: "•";
+      color: #4acfee;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    
+    .education-section {
+      margin-top: 40px;
+    }
+    
+    .education-item {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(74, 207, 238, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .education-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(74, 207, 238, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4acfee;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    
+    .education-details h3 {
+      font-size: 20px;
+      color: #4acfee;
+      margin-bottom: 5px;
+    }
+    
+    .education-details p {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 0;
+    }
+    
+    .timeline {
+      position: relative;
+      margin: 40px 0;
+    }
+    
+    .timeline:before {
+      content: '';
+      position: absolute;
+      left: 25px;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: rgba(74, 207, 238, 0.3);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+      padding-left: 60px;
+    }
+    
+    .timeline-icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      background: rgba(74, 207, 238, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4acfee;
+      font-size: 20px;
+    }
+    
+    .timeline-content {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid rgba(74, 207, 238, 0.2);
+    }
+    
+    .timeline-content h3 {
+      font-size: 18px;
+      color: #4acfee;
+      margin-bottom: 10px;
+    }
+    
+    .timeline-content p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .certification-item {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid rgba(74, 207, 238, 0.2);
+      transition: transform 0.3s;
+    }
+    
+    .certification-item:hover {
+      transform: translateY(-5px);
+    }
+    
+    .certification-item h4 {
+      font-size: 18px;
+      color: #4acfee;
+      margin-bottom: 10px;
+    }
+    
+    .certification-item p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .quote-section {
+      text-align: center;
+      margin: 50px 0;
+      padding: 30px;
+      background: rgba(74, 207, 238, 0.1);
+      border-radius: 15px;
+      border-left: 4px solid #4acfee;
+    }
+    
+    .quote-section p {
+      font-size: 20px;
+      font-style: italic;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    @media (max-width: 768px) {
+      .education-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+      
+      .certifications-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .about-content h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background video like index -->
+  <video autoplay loop muted plays-inline class="back-vid">
+      <source src="{% static 'images/galaxy.mp4' %}" type="video/mp4">
+  </video>
+
+  <section class="main-section">
+      <!-- Navbar -->
+      <nav>
+          <h1 data-aos="zoom-in" data-aos-duration="1000"><span style="color: #4acfee;">Cyber</span>Security</h1>
+          <ul>
+              <li><a href="/">Home</a></li>
+              <li><a class="active" href="/about/">About</a></li>
+              <li><a href="/project/">Projects</a></li>
+              <li><a href="/services/">Services</a></li>
+              <li><a href="/contact/">Contact</a></li>
+          </ul>
+      </nav>
+
+      <!-- About Section -->
+      <div class="section" id="about">
+          <h1 class="section-title">About <span>Me</span></h1>
+          <div class="about-container">
+              <div class="about-content" data-aos="fade-up" data-aos-duration="1000">
+                  
+                  <div class="about-intro">
+                      <p>I am a passionate cybersecurity enthusiast and ethical hacker dedicated to protecting digital assets and infrastructure from emerging threats. With a strong foundation in computer science and a relentless curiosity for security mechanisms, I strive to stay at the forefront of cybersecurity innovation.</p>
+                  </div>
+
+                  <div class="about-sub" data-aos="fade-right">
+                      <h2><i class='bx bx-user'></i> Who I Am</h2>
+                      <p>My name is <strong>Rajesh Gupta</strong>, originally from <strong>Shoratgrah, Siddharthnagar (UP)</strong>. I'm a dedicated cybersecurity student with a passion for ethical hacking, penetration testing, and vulnerability assessment. My journey in cybersecurity began with a curiosity about how systems work and how they can be protected from malicious attacks.</p>
+                      <p>I believe in continuous learning and staying updated with the latest security trends and technologies. My goal is to contribute to making the digital world a safer place for everyone.</p>
+                  </div>
+
+                  <!-- Education Section -->
+                  <div class="education-section">
+                      <h2><i class='bx bx-book'></i> Education</h2>
+                      
+                      <div class="education-item" data-aos="fade-right" data-aos-duration="1000">
+                          <div class="education-icon">
+                              <i class='bx bxs-graduation'></i>
+                          </div>
+                          <div class="education-details">
+                              <h3>BTech in Computer Science & Engineering</h3>
+                              <p>Maharishi Markandeshwar University, Ambala | 2022 - Present</p>
+                              <p>Specializing in Cybersecurity and Network Defense</p>
+                          </div>
+                      </div>
+                      
+                      <div class="education-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
+                          <div class="education-icon">
+                              <i class='bx bx-book-alt'></i>
+                          </div>
+                          <div class="education-details">
+                              <h3>+2 (Higher Secondary Education)</h3>
+                              <p>Tillotama Higher Secondary School, Butwal | 2020 - 2022</p>
+                              <p>Focus on Computer Science and Mathematics</p>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Cybersecurity Journey -->
+                  <div class="about-sub" data-aos="fade-up">
+                      <h2><i class='bx bx-trending-up'></i> My Cybersecurity Journey</h2>
+                      <div class="timeline">
+                          <div class="timeline-item" data-aos="fade-right" data-aos-duration="1000">
+                              <div class="timeline-icon">
+                                  <i class='bx bx-rocket'></i>
+                              </div>
+                              <div class="timeline-content">
+                                  <h3>Beginning of Interest</h3>
+                                  <p>Started exploring basic cybersecurity concepts and ethical hacking principles</p>
+                              </div>
+                          </div>
+                          
+                          <div class="timeline-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
+                              <div class="timeline-icon">
+                                  <i class='bx bx-code-alt'></i>
+                              </div>
+                              <div class="timeline-content">
+                                  <h3>Skill Development</h3>
+                                  <p>Learned programming languages (Python, JavaScript) and began understanding security vulnerabilities</p>
+                              </div>
+                          </div>
+                          
+                          <div class="timeline-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                              <div class="timeline-icon">
+                                  <i class='bx bx-shield'></i>
+                              </div>
+                              <div class="timeline-content">
+                                  <h3>Tools & Techniques</h3>
+                                  <p>Mastered security tools like Nmap, Burp Suite, Metasploit, and Wireshark</p>
+                              </div>
+                          </div>
+                          
+                          <div class="timeline-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
+                              <div class="timeline-icon">
+                                  <i class='bx bx-target-lock'></i>
+                              </div>
+                              <div class="timeline-content">
+                                  <h3>Practical Experience</h3>
+                                  <p>Started participating in CTF challenges and bug bounty programs</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Certifications -->
+                  <div class="about-sub" data-aos="fade-up">
+                      <h2><i class='bx bx-certification'></i> Certifications & Achievements</h2>
+                      <div class="certifications-grid">
+                          <div class="certification-item" data-aos="fade-up" data-aos-duration="1000">
+                              <h4>Ethical Hacking Essentials</h4>
+                              <p>EC-Council | 2023</p>
+                          </div>
+                          
+                          <div class="certification-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                              <h4>Network Defense Fundamentals</h4>
+                              <p>Cisco Networking Academy | 2023</p>
+                          </div>
+                          
+                          <div class="certification-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                              <h4>Python for Security</h4>
+                              <p>FreeCodeCamp | 2022</p>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Interests -->
+                  <div class="about-sub" data-aos="fade-right">
+                      <h2><i class='bx bx-chess'></i> Interests</h2>
+                      <ul>
+                          <li><strong>Chess</strong> – Enhances strategic thinking and problem-solving abilities</li>
+                          <li><strong>Cricket</strong> – Teaches teamwork, perseverance, and handling pressure</li>
+                          <li><strong>Self Study</strong> – Continuous learning about new technologies and security trends</li>
+                          <li><strong>Networking</strong> – Connecting with cybersecurity professionals and enthusiasts</li>
+                          <li><strong>Open Source</strong> – Contributing to security-related open source projects</li>
+                      </ul>
+                  </div>
+
+                  <!-- Hobbies -->
+                  <div class="about-sub" data-aos="fade-left">
+                      <h2><i class='bx bx-run'></i> Hobbies</h2>
+                      <ul>
+                          <li>Creating educational content for YouTube focused on cybersecurity and ethical hacking</li>
+                          <li>Learning new programming languages and security tools</li>
+                          <li>Participating in Capture The Flag (CTF) competitions</li>
+                          <li>Reading cybersecurity blogs and research papers</li>
+                          <li>Experimenting with home lab setups for security testing</li>
+                      </ul>
+                  </div>
+
+                  <!-- Skills Overview -->
+                  <div class="about-sub" data-aos="fade-up">
+                      <h2><i class='bx bx-stats'></i> Technical Proficiencies</h2>
+                      <ul>
+                          <li><strong>Penetration Testing:</strong> Conducting ethical hacking exercises to identify vulnerabilities</li>
+                          <li><strong>Network Security:</strong> Securing network infrastructure and monitoring for threats</li>
+                          <li><strong>Security Tools:</strong> Nmap, Burp Suite, Metasploit, Wireshark, John the Ripper</li>
+                          <li><strong>Programming:</strong> Python, JavaScript, Bash scripting for security automation</li>
+                          <li><strong>Web Application Security:</strong> OWASP Top 10 vulnerabilities and mitigation techniques</li>
+                          <li><strong>Operating Systems:</strong> Kali Linux, Windows Server, Ubuntu</li>
+                      </ul>
+                  </div>
+
+                  <!-- Philosophy -->
+                  <div class="quote-section" data-aos="fade-up">
+                      <p>"In the world of cybersecurity, the only constant is change. Staying ahead requires continuous learning, adaptation, and a passion for innovation."</p>
+                  </div>
+
+                  <!-- Future Goals -->
+                  <div class="about-sub" data-aos="fade-up">
+                      <h2><i class='bx bx-planet'></i> Future Goals</h2>
+                      <ul>
+                          <li>Obtain advanced certifications like CEH, OSCP, and CISSP</li>
+                          <li>Contribute to open-source security projects</li>
+                          <li>Develop innovative security tools and solutions</li>
+                          <li>Mentor aspiring cybersecurity professionals</li>
+                          <li>Establish a career in penetration testing and security consulting</li>
+                      </ul>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, offset: 100 });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Rajesh Gupta - Cybersecurity Professional</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Background video like index -->
+    <video autoplay loop muted plays-inline class="back-vid">
+        <source src="{% static 'images/galaxy.mp4' %}" type="video/mp4">
+    </video>
+
+    <section class="main-section">
+        <!-- Navbar -->
+        <nav>
+            <h1 data-aos="zoom-in" data-aos-duration="1000"><span style="color: #4acfee;">Cyber</span>Security</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/project/">Projects</a></li>
+                <li><a href="/services/">Services</a></li>
+                <li><a class="active" href="/contact/">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contact Section -->
+        <div class="section" id="contact">
+            <h1 class="section-title">Contact <span>Me</span></h1>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="contact-icon">
+                            <i class='bx bx-envelope'></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <a href="mailto:rajeshgupta272205@gmail.com">rajeshgupta272205@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="contact-icon">
+                            <i class='bx bx-phone'></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Phone</h3>
+                            <a href="tel:+917518127973">+91 7518127973</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="contact-icon">
+                            <i class='bx bx-map'></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Location</h3>
+                            <p>Shoratgrah, Siddharthnagar, UP, India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
+                        <h3>Follow Me</h3>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/rajesh25.01/" target="_blank" class="social-link">
+                                <i class='bx bxl-instagram'></i>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=100027969767192" target="_blank" class="social-link">
+                                <i class='bx bxl-facebook'></i>
+                            </a>
+                            <a href="https://x.com/Rajeshgupta2594" target="_blank" class="social-link">
+                                <i class='bx bxl-twitter'></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/rajesh-gupta-650979318/" target="_blank" class="social-link">
+                                <i class='bx bxl-linkedin'></i>
+                            </a>
+                            <a href="https://github.com/rajesh0125" target="_blank" class="social-link">
+                                <i class='bx bxl-github'></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form" data-aos="fade-left" data-aos-duration="1000">
+                    <form action="https://formspree.io/f/xrbqqdpo" method="POST" id="contactform">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            Send Message <i class='bx bx-send'></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="quote" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                <p>"The only limit to our realization of tomorrow is our doubts of today."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, offset: 100 });
+        
+        // Handle contact form submission using Formspree
+        const form = document.getElementById("contactform");
+        if (form) {
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const data = new FormData(form);
+
+                fetch(form.action, {
+                    method: "POST",
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        alert("Thank you! Your message has been sent.");
+                        form.reset();
+                    } else {
+                        alert("Oops! Something went wrong. Please try again later.");
+                    }
+                }).catch(error => {
+                    alert("Error: " + error.message);
+                });
+            });
+        }
+    </script>
+
+    <style>
+        /* Additional styles for the contact page */
+        .contact-social {
+            margin-top: 30px;
+        }
+        
+        .contact-social h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #4acfee;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(74, 207, 238, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4acfee;
+            font-size: 20px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            background: #4acfee;
+            color: #0e1217;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(74, 207, 238, 0.4);
+        }
+        
+        .quote {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .quote p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+        }
+    </style>
+
+</body>
+</html>

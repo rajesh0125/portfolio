@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Rajesh Gupta - Cybersecurity Professional</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Background video like index -->
+  <video autoplay loop muted plays-inline class="back-vid">
+      <source src="{% static 'images/galaxy.mp4' %}" type="video/mp4">
+  </video>
+
+  <section class="main-section">
+      <!-- Navbar -->
+      <nav>
+          <h1 data-aos="zoom-in" data-aos-duration="1000"><span style="color: #4acfee;">Cyber</span>Security</h1>
+          <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/project/">Projects</a></li>
+              <li><a class="active" href="/services/">Services</a></li>
+              <li><a href="/contact/">Contact</a></li>
+          </ul>
+      </nav>
+
+      <!-- Services Section -->
+      <div class="section" id="services">
+          <h1 class="section-title">My <span>Services</span></h1>
+          
+          <div class="services-container">
+              <div class="service-card" data-aos="fade-up" data-aos-duration="1000">
+                  <div class="service-icon">
+                      <i class='bx bx-code-alt'></i>
+                  </div>
+                  <h3>Web Development</h3>
+                  <p>Responsive, interactive, and modern websites using HTML, CSS, JavaScript, and frameworks.</p>
+              </div>
+              
+              <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                  <div class="service-icon">
+                      <i class='bx bx-shield-quarter'></i>
+                  </div>
+                  <h3>Cybersecurity</h3>
+                  <p>Basic penetration testing and security practices with tools like Kali Linux, Nmap, and Burp Suite.</p>
+              </div>
+              
+              <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                  <div class="service-icon">
+                      <i class='bx bx-data'></i>
+                  </div>
+                  <h3>Database Management</h3>
+                  <p>Designing and managing databases with optimized queries and secure integrations.</p>
+              </div>
+              
+              <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                  <div class="service-icon">
+                      <i class='bx bx-chalkboard'></i>
+                  </div>
+                  <h3>Mentoring</h3>
+                  <p>Helping beginners in Web Development & Cybersecurity to learn and grow in tech.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, offset: 100 });
+  </script>
+
+  <style>
+    /* Services Section Styles */
+    .services-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+    }
+    
+    .service-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 40px 30px;
+        text-align: center;
+        border: 1px solid rgba(74, 207, 238, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(74, 207, 238, 0.3);
+    }
+    
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        background: rgba(74, 207, 238, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        color: #4acfee;
+        font-size: 30px;
+    }
+    
+    .service-card h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: #4acfee;
+    }
+    
+    .service-card p {
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.8);
+    }
+  </style>
+
+</body>
+</html>

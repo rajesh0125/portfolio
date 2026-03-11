@@ -1,0 +1,320 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Rajesh Gupta - Cybersecurity Professional</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Background video like index -->
+    <video autoplay loop muted plays-inline class="back-vid">
+        <source src="{% static 'images/galaxy.mp4' %}" type="video/mp4">
+    </video>
+
+    <section class="main-section">
+        <!-- Navbar -->
+        <nav>
+            <h1 data-aos="zoom-in" data-aos-duration="1000"><span style="color: #4acfee;">Cyber</span>Security</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a class="active" href="/project/">Projects</a></li>
+                <li><a href="/services/">Services</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Projects Section -->
+        <div class="section" id="projects">
+            <h1 class="section-title">My <span>Projects</span></h1>
+            
+            <!-- Project - Smart Face Attendance System -->
+            <div class="project-card-full" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="project-header">
+                    <h2>Smart Face Attendance System</h2>
+                </div>
+                
+                <div class="project-content-full">
+                    <h3>Project Description</h3>
+                    <p>A modern, AI-powered attendance management system that uses facial recognition technology to mark student attendance automatically. Built with Python Flask, OpenCV, HTML, CSS.</p>
+                    
+                    <h3>✨ Key Features</h3>
+                    <ul style="margin-bottom: 15px; padding-left: 20px;">
+                        <li><strong>Real-time Face Recognition:</strong> Uses LBPH algorithm for accurate face detection and identification from webcam feed.</li>
+                        <li><strong>Smart Attendance Rules:</strong> Includes a 1-hour cooldown policy to prevent duplicate entries for the same student.</li>
+                        <li><strong>Automated Model Training:</strong> The recognition model retrains automatically whenever a new student is registered.</li>
+                        <li><strong>Admin-Protected Registration:</strong> Student registration is password-protected (default: admin123) for secure access.</li>
+                        <li><strong>Export to Excel:</strong> All attendance records are automatically saved in Excel format for easy reporting and analysis.</li>
+                        <li><strong>Modern Glass UI:</strong> Features a professional user interface with glass morphism design, responsive layouts, and smooth animations.</li>
+                    </ul>
+                    
+                    <h3>Technologies Used</h3>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    
+                    <h3>How It Works</h3>
+                    <ol style="margin-bottom: 15px; padding-left: 20px;">
+                        <li><strong>Register:</strong> Admin adds new students with face samples (100 images captured via webcam).</li>
+                        <li><strong>Train:</strong> System automatically trains the model with new face data.</li>
+                        <li><strong>Mark:</strong> Student looks at camera to mark attendance with real-time verification.</li>
+                        <li><strong>Track:</strong> Records are saved with timestamps, preventing duplicate entries within 1 hour.</li>
+                    </ol>
+                    
+                    <h3>Project Link</h3>
+                    <a class="btn project-link" href="https://github.com/rajesh0125/Smart-Face-Attendance" target="_blank">
+                        <i class='bx bx-link-external'></i> View Project On Github
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project - Vulnerability Scanner -->
+            <div class="project-card-full" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="project-header">
+                    <h2>Vulnerability Scanner (Python + Nmap)</h2>
+                </div>
+                
+                <div class="project-content-full">
+                    <h3>Project Description</h3>
+                    <p>This project is a Python-based vulnerability scanner that uses the Nmap library to detect potential security issues in a target system or network. It performs service version detection and runs Nmap vulnerability scripts to identify possible vulnerabilities on open ports.</p>
+                    
+                    <h3>Key Features</h3>
+                    <ul style="margin-bottom: 15px; padding-left: 20px;">
+                        <li>Scan target IP address, hostname, or network range</li>
+                        <li>Automatic vulnerability detection using Nmap scripts</li>
+                        <li>Service and version detection for open ports</li>
+                        <li>Optional custom port scanning support</li>
+                        <li>Fast scanning using optimized Nmap timing options</li>
+                    </ul>
+                    
+                    <h3>Technologies Used</h3>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Nmap</span>
+                        <span class="tag">python-nmap</span>
+                        <span class="tag">Cybersecurity</span>
+                    </div>
+                    
+                    <h3>Project Link</h3>
+                    <a class="btn project-link" href="https://github.com/rajesh0125/vuln-scanner" target="_blank">
+                        <i class='bx bx-link-external'></i> View Project On Github
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project - Network Intelligence Tool -->
+            <div class="project-card-full" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="project-header">
+                    <h2>Network Intelligence Tool 🌐</h2>
+                </div>
+                
+                <div class="project-content-full">
+                    <h3>Project Description</h3>
+                    <p>A network security and intelligence tool that analyzes target systems by performing port scanning, service detection, DNS resolution, and WHOIS lookups. It helps gather important information about hosts, open ports, and running services for cybersecurity analysis.</p>
+                    
+                    <h3>Features</h3>
+                    <ul style="margin-bottom: 15px; padding-left: 20px;">
+                        <li>Fast port scanning to identify open ports</li>
+                        <li>Service and version detection</li>
+                        <li>Basic OS fingerprinting</li>
+                        <li>WHOIS and DNS lookup for domain information</li>
+                    </ul>
+                    
+                    <h3>Technologies Used</h3>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">Nmap</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    
+                    <h3>Project Link</h3>
+                    <a class="btn project-link" href="https://github.com/rajesh0125/network_scanner" target="_blank">
+                        <i class='bx bx-link-external'></i> View Project On Github
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project - Birthday Wishes Website -->
+            <div class="project-card-full" data-aos="fade-up" data-aos-duration="1000">
+                <div class="project-header">
+                    <h2>Birthday Wishes Website</h2>
+                </div>
+                
+                <div class="project-content-full">
+                    <h3>Project Description</h3>
+                    <p>This project allows users to create and send personalized birthday wishes with a beautiful interface and customizable options.</p>
+                    
+                    <h3>Key Features</h3>
+                    <ul style="margin-bottom: 15px; padding-left: 20px;">
+                        <li>Personalized birthday message display with user's name</li>
+                        <li>Audio playback of birthday wish (voice greeting)</li>
+                        <li>Simple name input interface</li>
+                        <li>Instant response with multimedia greeting</li>
+                    </ul>
+
+                    <h3>Technologies Used</h3>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    
+                    <h3>Project Link</h3>
+                    <p>Check out the project below:</p>
+                    <a class="btn project-link" href="https://rajesh0125.github.io/birthday-Wishes/" target="_blank">
+                        <i class='bx bx-link-external'></i> View Project
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Project - AI Face Recognition -->
+            <div class="project-card-full" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="project-header">
+                    <h2>AI Face Recognition</h2>
+                </div>
+                
+                <div class="project-content-full">
+                    <h3>Project Description</h3>
+                    <p>This project is aimed at detecting faces and verifying individuals by their names using advanced AI algorithms and database integration.</p>
+                    
+                    <h3>Features</h3>
+                    <ul style="margin-bottom: 15px; padding-left: 20px;">
+                        <li>Real-time face detection from webcam</li>
+                        <li>Face verification and identification by name</li>
+                        <li>MySQL database for storing user data</li>
+                        <li>User-friendly GUI interface</li>
+                    </ul>
+                    
+                    <h3>Technologies Used</h3>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">NumPy</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Tkinter</span>
+                    </div>
+                    
+                    <h3>Project Link</h3>
+                    <p>Check out the project below:</p>
+                    <a class="btn project-link" href="https://github.com/rajesh0125/Face-detection" target="_blank">
+                        <i class='bx bx-link-external'></i> View Project On Github
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project - Expense Tracking Website -->
+            <div class="project-card-full" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="project-header">
+                    <h2>Expense Tracking System</h2>
+                </div>
+                
+                <div class="project-content-full">
+                    <h3>Project Description</h3>
+                    <p>This project is a comprehensive expense tracking website that helps users monitor their daily expenditures, manage deposits and purchases, and maintain a clear overview of their financial balance with an intuitive dashboard interface.</p>
+                    
+                    <h3>Features</h3>
+                    <ul style="margin-bottom: 15px; padding-left: 20px;">
+                        <li>User authentication (Login/Signup system)</li>
+                        <li>Personal dashboard with real-time balance</li>
+                        <li>Deposit and Purchase recording functionality</li>
+                        <li>Account summary with transaction history</li>
+                        <li>Visual representation of deposits vs purchases</li>
+                        <li>Responsive design for all devices</li>
+                    </ul>
+                    
+                    <h3>Technologies Used</h3>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">MYSQL</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    
+                    <h3>Project Link</h3>
+                    <p>Check out the complete project below:</p>
+                    <a class="btn project-link" href="https://github.com/rajesh0125/Expense-tracking-website" target="_blank">
+                        <i class='bx bx-link-external'></i> View Project On Github
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, offset: 100 });
+    </script>
+
+    <style>
+        /* Additional styles for the project page */
+        .project-card-full {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            border: 1px solid rgba(74, 207, 238, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-card-full:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(74, 207, 238, 0.3);
+        }
+        
+        .project-header {
+            background: rgba(74, 207, 238, 0.1);
+            padding: 20px 30px;
+            border-bottom: 1px solid rgba(74, 207, 238, 0.2);
+        }
+        
+        .project-header h2 {
+            font-size: 28px;
+            color: #4acfee;
+            margin: 0;
+        }
+        
+        .project-content-full {
+            padding: 30px;
+        }
+        
+        .project-content-full h3 {
+            font-size: 20px;
+            color: #4acfee;
+            margin: 20px 0 10px;
+        }
+        
+        .project-content-full p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .project-link {
+            margin-top: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .disabled {
+            pointer-events: none;
+        }
+    </style>
+
+</body>
+</html>
